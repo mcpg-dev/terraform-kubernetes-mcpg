@@ -74,7 +74,7 @@ module "gateway" {
 | `modules/plugin` | one `MCPGPlugin` catalogue entry (`plugin_id`, `plugin_class`, `plugin_version`, `oci`, `trust` — `version` is a reserved module argument, hence `plugin_version`) |
 | `modules/plugin-set` | an `MCPGPluginSet`: ordered entries plus a `capabilityGrants` map keyed by entry id |
 | `modules/trust-bootstrap` | the `cluster-default` `MCPGRevocationList` and a pass-through of the signing-key `secretRef` |
-| `modules/cluster` | an `MCPGCluster` coordination backend (`single_node`, `redis`, `nats`, `consul`, `etcd`), optionally creating the backend credential Secrets it exposes as `cred://cluster/<name>` |
+| `modules/cluster` | an `MCPGCluster` coordination backend (`single_node`, `redis`, `nats`), optionally creating the backend credential Secrets it exposes as `cred://cluster/<name>` |
 | `modules/route` | an `MCPGRoute` — the soft-multi-tenancy primitive binding a tool subset into a shared gateway with identity / policy / audit chains |
 | `modules/tenant-cr` | an `MCPGTenant`: the declarative governance boundary (plugin allowlist, quotas, exclusive namespace ownership) |
 | `modules/tenant` | one tenant as an imperative fan-out — namespace, RBAC, NetworkPolicy, and optionally a plugin set and gateway; call with `for_each` over a tenant map |
