@@ -74,7 +74,7 @@ module "plugin_sql" {
   plugin_version = "1.4.2"
 
   oci = {
-    image     = "${local.upstream.registry}/${local.upstream.namespace}/plugins/sql@${var.sql_plugin_digest}"
+    image     = "${local.upstream.registry}/${local.upstream.namespace}/plugins/backend-sql@${var.sql_plugin_digest}"
     mirrorRef = { name = module.airgap.mirror_name }
   }
   # signingKeyRef is the MANDATORY trust baseline (Ed25519); cosign/SLSA are

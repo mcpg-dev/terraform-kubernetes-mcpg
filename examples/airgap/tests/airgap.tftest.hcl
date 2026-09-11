@@ -80,7 +80,7 @@ run "registry_base_repoints_upstream_and_refs" {
   }
 
   assert {
-    condition     = startswith(output.plugin_image, "registry.example.test/acme/plugins/sql@")
+    condition     = startswith(output.plugin_image, "registry.example.test/acme/plugins/backend-sql@")
     error_message = "plugin image does not compose from oci_registry_base"
   }
 
